@@ -22,6 +22,7 @@ class NationalPark:
     
     def trips(self):
         # return list of all trips at particular national park
+        # iterate through all trips
         # must be type Trip
         return [trip for trip in Trip.all if trip.national_park == self]
     
@@ -52,7 +53,18 @@ class NationalPark:
         best_visitor = max(visitor_counts, key=visitor_counts.get)
         return best_visitor
 
-
+    # visitor_counts = {}
+    # for trip in self.trips():
+        # (if visitor key already exists)
+    # if trip.visitor in visitor_counts:
+        # (add to the value)
+        # visitor_counts[trip.visitor] += 1
+    # (if the visitor key does NOT exist)
+    # else:
+        # (create that key, and set it to 1)
+        # visitor_counts[trip.visitor] = 1
+    # use max to find the greatest value
+    # return max(visitor counts, key=visitor_counts.get)
 class Trip:
     all = []
     
@@ -136,4 +148,5 @@ class Visitor:
         # need NationalPark object as argument
         # return total # of times visitor visited park passed in argument
         # returns 0 if visitor has never visited the park
+        # see what trips match self and park
         return len([trip for trip in self.trips() if trip.national_park == park])

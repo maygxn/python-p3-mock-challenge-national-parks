@@ -116,7 +116,7 @@ class TestVisitor:
         assert isinstance(vis.national_parks()[0], NationalPark)
         assert isinstance(vis.national_parks()[1], NationalPark)
 
-    def total_visits_at_park(self):
+    def test_total_visits_at_park(self):
         """returns the total number of times a visitor has visited a park."""
         vis = Visitor("Phil")
         yosemite = NationalPark("Yosemite")
